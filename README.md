@@ -19,15 +19,15 @@ The main objectives of the project are to:
 ## Features
 
 The major functions of the system include:
-✮ **User Account Management** – Allows users to create an account and log in to access their personal book records.
-✮ **Add Books** – Allows users to add books and record important details such as title, author, reading dates, rating, and favorite quotes.
-✮ **Book Organization** – Organizes books according to their reading status: Read, Currently Reading, Want to Read, and Dropped.
-✮ **Search Books** – Allows users to quickly find a specific book from their personal collection.
-✮ **Update Book Records** – Allows users to edit or update the information of their saved books.
-✮ **Delete Books** – Allows users to remove books from their personal book log.
-✮ **Reading Progress Tracking** – Helps users monitor their reading activity and progress.
-✮ **Reading Summary and Statistics** – Displays a summary of the user’s reading activity and book records.
-✮ **Personal Book Archive** – Keeps the user’s book records organized in one place for easy access and management.
+* **User Account Management** – Allows users to create an account and log in to access their personal book records.
+* **Add Books** – Allows users to add books and record important details such as title, author, reading dates, rating, and favorite quotes.
+* **Book Organization** – Organizes books according to their reading status: Read, Currently Reading, Want to Read, and Dropped.
+* **Search Books** – Allows users to quickly find a specific book from their personal collection.
+* **Update Book Records** – Allows users to edit or update the information of their saved books.
+* **Delete Books** – Allows users to remove books from their personal book log.
+* **Reading Progress Tracking** – Helps users monitor their reading activity and progress.
+* **Reading Summary and Statistics** – Displays a summary of the user’s reading activity and book records.
+* **Personal Book Archive** – Keeps the user’s book records organized in one place for easy access and management.
 
 ## Technologies Used
 
@@ -196,26 +196,28 @@ These operations allow Chapterd to efficiently store, manage, and retrieve the u
 ## Screenshots
 
 The following screenshots show the important parts and main functions of the Chapterd application.
+
 ✮ The login screen allows registered users to enter their username and password to access their Chapterd account.
-![LogIn.png](../../../OneDrive/Pictures/Screenshots/LogIn.png)
 
+![LogIn.png](screenshots/LogIn.png)
 ✮ The registration screen allows new users to create an account by providing the required information.
-![Register.png](../../../OneDrive/Pictures/Screenshots/Register.png)
 
+![Register.png](screenshots/Register.png)
 ✮ The main dashboard displays the user's book collection and provides access to the different features of Chapterd.
-![MainDashboard.png](../../../OneDrive/Pictures/Screenshots/MainDashboard.png)
 
+![MainDashboard.png](screenshots/MainDashboard.png)
 ✮ The Add Book screen allows users to add a book to their personal collection and enter important information such as the title, author, reading status, rating, and reading dates.
-![AddBook.png](../../../OneDrive/Pictures/Screenshots/AddBook.png)
 
+![AddBook.png](screenshots/AddBook.png)
 ✮ The search feature allows users to find specific books in their collection quickly using information such as the book title or author.
-![SearchBook.png](../../../OneDrive/Pictures/Screenshots/SearchBook.png)
 
+![SearchBook.png](screenshots/SearchBook.png)
 ✮ This section allows users to view and manage their book information. Users can update existing records or remove books from their collection.
-![UpdateBook.png](../../../OneDrive/Pictures/Screenshots/UpdateBook.png)
 
+![ViewBook.png](screenshots/ViewBook.png)
 ✮ The reading summary displays an overview of the user's reading activity, including their book records and reading progress.
-![ViewBook.png](../../../OneDrive/Pictures/Screenshots/ViewBook.png)
+
+![ViewBook.png](screenshots/ViewBook.png)
 
 ## Testing
 
@@ -254,5 +256,5 @@ python main.py
 
 ## Author 
 
-✮ Jovel Mae U. Mejala
-✮ CS26L - 3581
+- Jovel Mae U. Mejala
+- CS26L - 3581
