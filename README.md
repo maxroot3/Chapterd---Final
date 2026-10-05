@@ -200,21 +200,27 @@ The following screenshots show the important parts and main functions of the Cha
 ✮ The login screen allows registered users to enter their username and password to access their Chapterd account.
 
 ![LogIn.png](screenshots/LogIn.png)
+
 ✮ The registration screen allows new users to create an account by providing the required information.
 
 ![Register.png](screenshots/Register.png)
+
 ✮ The main dashboard displays the user's book collection and provides access to the different features of Chapterd.
 
 ![MainDashboard.png](screenshots/MainDashboard.png)
+
 ✮ The Add Book screen allows users to add a book to their personal collection and enter important information such as the title, author, reading status, rating, and reading dates.
 
 ![AddBook.png](screenshots/AddBook.png)
+
 ✮ The search feature allows users to find specific books in their collection quickly using information such as the book title or author.
 
 ![SearchBook.png](screenshots/SearchBook.png)
+
 ✮ This section allows users to view and manage their book information. Users can update existing records or remove books from their collection.
 
 ![ViewBook.png](screenshots/ViewBook.png)
+
 ✮ The reading summary displays an overview of the user's reading activity, including their book records and reading progress.
 
 ![ViewBook.png](screenshots/ViewBook.png)
