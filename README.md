@@ -228,7 +228,7 @@ The following screenshots show the important parts and main functions of the Cha
 ✮ The reading summary displays an overview of the user's reading activity, including their book records and reading progress.
 
 ![BookLog.png](screenshots/BookLog.png)
-![ViewBook.png](screenshots/ViewBook.png)
+![SummaryStats.png](screenshots/SummaryStats.png)
 
 ## Testing
 
