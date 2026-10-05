@@ -145,28 +145,34 @@ The basic steps for using the Chapterd application are:
 
 ## OOP Implementation
 
-The Chapterd system uses Object-Oriented Programming (OOP) to organize its different functions into classes and objects. This makes the code easier to manage, reuse, and maintain.
+Chapterd uses Object-Oriented Programming (OOP) to organize its features into classes and objects. Each class has a specific responsibility, which keeps the system organized and easier to maintain.
 
-**Important Classes and Objects**
+#### Important Classes
 
-* **`MainWindow`** – Manages the main interface of the application where users can view and manage their books.
-* **`LoginWindow`** – Handles the user login process and checks the user's account information.
-* **`RegisterWindow`** – Allows new users to create an account.
-* **`Book`** – Represents a book and stores information such as its title, author, reading status, rating, and reading dates.
-* **`BookManager`** – Handles book-related operations such as adding, searching, updating, and deleting books.
-* **`Database`** – Handles the connection and operations with the SQLite database.
-* **`BookAPI`** – Connects to the external book API to retrieve book information.
+* **`ChapterdWindow`** – Manages the main application window, including the header, username, and logout button.
+* **`Database`** – Handles the SQLite database and creates the required tables.
+* **`AuthenticationService`** – Handles user authentication and logout functions.
+* **`AuthenticationView`** – Provides the login interface.
+* **`BookService`** – Manages book-related operations and reading statuses.
+* **`BookView`** – Provides the interface for viewing and managing books.
 
 #### OOP Concepts Used
 
-* **Encapsulation** – Related data and functions are grouped inside their respective classes. For example, the `Book` class contains the information about a book, while `BookManager` handles operations involving book records. This keeps each part of the system organized.
+* **Encapsulation** – Related data and functions are grouped inside their respective classes. For example, `AuthenticationService` handles authentication while `BookService` handles book operations.
 
-* **Inheritance** – The system uses inheritance through PyQt6 classes. For example, custom window classes can inherit from classes such as `QMainWindow` or `QDialog`. This allows the application to use the built-in features of PyQt6 while adding its own functions.
+* **Inheritance** – `ChapterdWindow` inherits from PyQt6's `QDialog` class:
 
-* **Polymorphism** – Polymorphism is present through the use of PyQt6 widgets and inherited classes. Custom classes can use or override behaviors provided by their parent classes while providing functionality specific to the LetterBook system.
+  ```python
+  class ChapterdWindow(QDialog):
+  ```
 
-Overall, OOP allows the Chapterd system to separate its user interface, book management, database, authentication, and API functions into organized and manageable components.
+  This allows it to use the features of `QDialog` while adding functionality specific to Chapterd.
 
+* **Objects** – The system creates objects from its classes, such as `Database()`, `AuthenticationService()`, `BookService()`, and `ChapterdWindow()`. These objects work together to run the application.
+
+* **Composition** – Classes work together by receiving and using other objects. For example, `AuthenticationService` and `BookService` use the `Database` object to access stored information.
+
+Overall, OOP allows Chapterd to separate its database, authentication, book management, and interface functions into organized and reusable components.
 
 ## Database
 
