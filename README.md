@@ -81,26 +81,26 @@ _python --version_
 
 4. Activate the Virtual Environment
 
-For Windows:
+- For Windows:
 _venv\Scripts\activate_
 
 5. Install PyQt6
 
-_pip install PyQt6_
+- _pip install PyQt6_
 
 6. Install Other Dependencies
 
-Install the required libraries listed in the requirements.txt file:
+- Install the required libraries listed in the requirements.txt file:
 _pip install -r requirements.txt_
 
 7. Set Up the Database
 
-SQLite is used as the database and does not require a separate database server.
+- SQLite is used as the database and does not require a separate database server.
 The application will use the existing database file or create the required database tables when the system is first run.
 
 8. Run the Application
 
-    In the project folder, run:
+- In the project folder, run:
 _python main.py_
 
 9. Log In or Create an Account
@@ -219,7 +219,11 @@ The following screenshots show the important parts and main functions of the Cha
 
 ✮ This section allows users to view and manage their book information. Users can update existing records or remove books from their collection.
 
-![ViewBook.png](screenshots/ViewBook.png)
+![UpdateBook.png](screenshots/UpdateBook.png)
+
+✮ This section allows users to remove a book from their collection. Users can select a book and delete its record from the system.
+
+![RemoveBook.png](screenshots/RemoveBook.png)
 
 ✮ The reading summary displays an overview of the user's reading activity, including their book records and reading progress.
 
