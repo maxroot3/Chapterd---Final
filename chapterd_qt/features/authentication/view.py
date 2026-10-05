@@ -21,7 +21,7 @@ class AuthenticationView(QDialog):
 
         title = QLabel("Chapterd")
         title.setObjectName("appTitle")
-        subtitle = QLabel("Your personal book log")
+        subtitle = QLabel("˙⋆✮ personal archive of everything you read ✮˙⋆")
         subtitle.setObjectName("appSubtitle")
         layout.addWidget(title)
         layout.addWidget(subtitle)
