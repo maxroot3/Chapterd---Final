@@ -9,12 +9,12 @@ When you type a title, the app suggests matching books from [Open Library](https
 ## Project Objectives
 
 The main objectives of the project are to:
-✮ Organize books based on their reading status: Read, Currently Reading, Want to Read, and Dropped.
-✮ Track and monitor the user’s reading progress.
-✮ Maintain a personal record of books read and collected.
-✮ Provide a simple and convenient way to manage a personal reading archive.
-✮ Allow users to add, search, update, and remove book records easily.
-✮ Provide reading summaries and statistics to help users review their reading activity.
+- Organize books based on their reading status: Read, Currently Reading, Want to Read, and Dropped.
+- Track and monitor the user’s reading progress.
+- Maintain a personal record of books read and collected.
+- Provide a simple and convenient way to manage a personal reading archive.
+- Allow users to add, search, update, and remove book records easily.
+- Provide reading summaries and statistics to help users review their reading activity.
 
 ## Features
 
@@ -31,15 +31,15 @@ The major functions of the system include:
 
 ## Technologies Used
 
-1. Programming Language
-⋆ Python 3.10 or newer – Used as the main programming language for developing the system.
-2. GUI Framework/Library
-⋆ PyQt6 – Used to create the desktop graphical user interface (GUI) of the application.
-3. Database
-⋆ SQLite – Used to store and manage user accounts, book records, reading statuses, and other system data.
-4. Other Important Libraries or Tools Used
-⋆ API – Used to retrieve book-related information and help reduce the need for users to manually enter book details.
-⋆ Python Standard Libraries – Used for additional functions such as data processing, file handling, and security.
+* Programming Language
+Python 3.10 or newer – Used as the main programming language for developing the system.
+* GUI Framework/Library
+PyQt6 – Used to create the desktop graphical user interface (GUI) of the application.
+* Database
+SQLite – Used to store and manage user accounts, book records, reading statuses, and other system data.
+* Other Important Libraries or Tools Used
+API – Used to retrieve book-related information and help reduce the need for users to manually enter book details.
+Python Standard Libraries – Used for additional functions such as data processing, file handling, and security.
 
 
 ## Project Structure
@@ -60,11 +60,11 @@ chapterd_qt/
 
 Before running the system, make sure the following are installed:
 
-⋆ Python 3.10 or newer
-⋆ PyQt6
-⋆ SQLite3
-⋆ Internet connection for the book API
-⋆ A code editor or IDE, such as Visual Studio Code / PyCharm
+- Python 3.10 or newer
+- PyQt6
+- SQLite3
+- Internet connection for the book API
+- A code editor or IDE, such as Visual Studio Code / PyCharm
 
 **Step-by-Step Installation**
 
@@ -76,9 +76,8 @@ _python --version_
 2. Open the Project
 - Open the chapterd_qt project folder using PyCharm or another code editor.
 
-3. Create a Virtual Environment 
-
-_python -m venv venv_
+3. Create a Virtual Environment
+    _python -m venv venv_
 
 4. Activate the Virtual Environment
 
@@ -86,18 +85,25 @@ For Windows:
 _venv\Scripts\activate_
 
 5. Install PyQt6
+
 _pip install PyQt6_
 
-6. Set Up the Database
+6. Install Other Dependencies
+
+Install the required libraries listed in the requirements.txt file:
+_pip install -r requirements.txt_
+
+7. Set Up the Database
+
 SQLite is used as the database and does not require a separate database server.
 The application will use the existing database file or create the required database tables when the system is first run.
 
-7. Run the Application
+8. Run the Application
 
-In the project folder, run:
+    In the project folder, run:
 _python main.py_
 
-8. Log In or Create an Account
+9. Log In or Create an Account
 - Create a new account if you are a new user.
 - Log in to access the main book log system.
 
@@ -105,11 +111,11 @@ _python main.py_
 
 The main dependencies used by the project include:
 
-⋆ Python 3.10+
-⋆ PyQt6 – for the graphical user interface
-⋆ SQLite3 – for database management
-⋆ Requests or another API library – for connecting to the book API
-⋆ Python Standard Library – for built-in functions such as hashing, file handling, and database operations
+* Python 3.10+
+* PyQt6 – for the graphical user interface
+* SQLite3 – for database management
+* Requests or another API library – for connecting to the book API
+* Python Standard Library – for built-in functions such as hashing, file handling, and database operations
 
 ## How to Use the System
 
@@ -187,7 +193,7 @@ Chapterd performs the following major database operations:
 
 These operations allow Chapterd to efficiently store, manage, and retrieve the user's personal reading records.
 
-## SCREENSHOTS
+## Screenshots
 
 The following screenshots show the important parts and main functions of the Chapterd application.
 ✮ The login screen allows registered users to enter their username and password to access their Chapterd account.
