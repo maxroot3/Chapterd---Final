@@ -215,11 +215,11 @@ The following screenshots show the important parts and main functions of the Cha
 
 ✮ The search feature allows users to find specific books in their collection quickly using information such as the book title or author.
 
-![SearchBook.png](screenshots/SearchBook.png)
+![Search.png](screenshots/Search.png)
 
 ✮ This section allows users to view and manage their book information. Users can update existing records or remove books from their collection.
 
-![UpdateBook.png](screenshots/UpdateBook.png)
+![Update.png](screenshots/Update.png)
 
 ✮ This section allows users to remove a book from their collection. Users can select a book and delete its record from the system.
 
@@ -227,6 +227,7 @@ The following screenshots show the important parts and main functions of the Cha
 
 ✮ The reading summary displays an overview of the user's reading activity, including their book records and reading progress.
 
+![BookLog.png](screenshots/BookLog.png)
 ![ViewBook.png](screenshots/ViewBook.png)
 
 ## Testing
