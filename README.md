@@ -259,7 +259,7 @@ Based on the tests performed, the major functions of Chapterd worked as expected
 ## Run the app
 
 ```
-cd letterbook_pyqt/chapterd_qt
+cd chapterd_qt
 python -m pip install -r requirements.txt
 python main.py
 ```
@@ -274,4 +274,4 @@ python main.py
 ## Author 
 
 - Jovel Mae U. Mejala
-- CS26L - 3581
+- CS26L - 3581 (BSCS - 2)
