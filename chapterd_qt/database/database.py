@@ -46,6 +46,7 @@ class Database:
                 CREATE TABLE IF NOT EXISTS books (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     user_id INTEGER NOT NULL,
+                    book_no INTEGER,
                     title TEXT NOT NULL,
                     author TEXT NOT NULL,
                     genre TEXT NOT NULL DEFAULT '',
@@ -75,6 +76,30 @@ class Database:
                 END;
                 """
             )
+            self._add_book_numbers(connection)
+
+    @staticmethod
+    def _add_book_numbers(connection) -> None:
+        """Gives every account its own book numbers (1, 2, 3...), so numbers are not shared between accounts.
+
+        `books.id` stays the one global key SQLite needs; `book_no` is the ID the user sees.
+        Also upgrades databases made before this column existed.
+        """
+        columns = [row["name"] for row in connection.execute("PRAGMA table_info(books)")]
+        if "book_no" not in columns:
+            connection.execute("ALTER TABLE books ADD COLUMN book_no INTEGER")
+        # number any books that don't have one yet, per account, in the order they were added
+        connection.execute(
+            """
+            UPDATE books SET book_no = (
+                SELECT COUNT(*) FROM books AS earlier
+                WHERE earlier.user_id = books.user_id AND earlier.id <= books.id
+            ) WHERE book_no IS NULL
+            """
+        )
+        connection.execute(
+            "CREATE UNIQUE INDEX IF NOT EXISTS books_user_book_no ON books (user_id, book_no)"
+        )
 
     # ---------- authentication ----------
     @staticmethod
@@ -116,9 +141,11 @@ class Database:
     def add_book(self, user_id, title, author, genre, status, rating, notes):
         with self.connect() as connection:
             connection.execute(
-                "INSERT INTO books (user_id, title, author, genre, status, rating, notes) "
-                "VALUES (?, ?, ?, ?, ?, ?, ?)",
-                (user_id, title.strip(), author.strip(), genre.strip(), status, rating, notes.strip()),
+                # book_no = this account's next number, so every account starts again at 1
+                "INSERT INTO books (user_id, book_no, title, author, genre, status, rating, notes) "
+                "VALUES (?, (SELECT COALESCE(MAX(book_no), 0) + 1 FROM books WHERE user_id = ?), "
+                "?, ?, ?, ?, ?, ?)",
+                (user_id, user_id, title.strip(), author.strip(), genre.strip(), status, rating, notes.strip()),
             )
 
     def get_books(self, user_id):

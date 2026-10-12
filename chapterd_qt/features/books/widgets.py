@@ -10,14 +10,15 @@ from PyQt6.QtWidgets import (
 from features.books.lookup import parse_results, search_url
 from features.books.service import MAX_TEXT_LENGTH, STATUSES
 
-COLUMNS = ["ID", "Title", "Author", "Genre", "Status", "Rating"]
+# (header, book key): the Book Log leaves out Status and Rating because they are filters there
+COLUMNS = [("ID", "book_no"), ("Title", "title"), ("Author", "author"), ("Genre", "genre")]
 
 # color per reading status
 STATUS_COLORS = {
-    "Want to Read": "#3b6ea5",  
-    "Reading": "#c27c0e",       
-    "Finished": "#3f8a4f",      
-    "Dropped": "#b23b3b",       
+    "Want to Read": "#3b6ea5",
+    "Reading": "#c27c0e",
+    "Finished": "#3f8a4f",
+    "Dropped": "#b23b3b",
 }
 
 
@@ -29,7 +30,7 @@ def stars(rating):
 class BookTable(QTableWidget):
     def __init__(self):
         super().__init__(0, len(COLUMNS))
-        self.setHorizontalHeaderLabels(COLUMNS)
+        self.setHorizontalHeaderLabels([label for label, _ in COLUMNS])
         self.setSelectionBehavior(QAbstractItemView.SelectionBehavior.SelectRows)
         self.setSelectionMode(QAbstractItemView.SelectionMode.SingleSelection)
         self.setEditTriggers(QAbstractItemView.EditTrigger.NoEditTriggers)
@@ -42,10 +43,8 @@ class BookTable(QTableWidget):
         self.blockSignals(True)
         self.setRowCount(len(books))
         for r, book in enumerate(books):
-            values = [book["id"], book["title"], book["author"], book["genre"],
-                      book["status"], stars(book["rating"])]
-            for c, value in enumerate(values):
-                item = QTableWidgetItem(str(value))
+            for c, (_, key) in enumerate(COLUMNS):
+                item = QTableWidgetItem(str(book[key]))
                 if c == 0:
                     item.setData(Qt.ItemDataRole.UserRole, book)
                 self.setItem(r, c, item)

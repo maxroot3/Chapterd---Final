@@ -75,15 +75,22 @@ class AuthenticationView(QDialog):
         button.clicked.connect(self.handle_register)
         form.addRow("Username", self.reg_username)
         form.addRow("Password", self.reg_password)
-        form.addRow("Confirm", self.reg_confirm)
+        form.addRow("Confirm Password", self.reg_confirm)
         form.addRow(button)
         return page
+
+    def show_message(self, text, success):
+        """Shows the message under the tabs: green for success, red for errors (see style.qss)."""
+        self.message.setProperty("state", "success" if success else "error")
+        self.message.style().unpolish(self.message)  # re-apply the stylesheet after the change
+        self.message.style().polish(self.message)
+        self.message.setText(text)
 
     def handle_login(self):
         try:
             self.authentication.login(self.login_username.text(), self.login_password.text())
         except AuthenticationError as error:
-            self.message.setText(str(error))
+            self.show_message(str(error), success=False)
             # clear the wrong password so the user can retype it straight away
             self.login_password.clear()
             self.login_password.setFocus()
@@ -96,9 +103,9 @@ class AuthenticationView(QDialog):
                 self.reg_username.text(), self.reg_password.text(), self.reg_confirm.text()
             )
         except AuthenticationError as error:
-            self.message.setText(str(error))
+            self.show_message(str(error), success=False)
             return
-        self.message.setText("Account created! You can log in now.")
+        self.show_message("Account created! You can log in now.", success=True)
         self.login_username.setText(self.reg_username.text())
         self.reg_password.clear()
         self.reg_confirm.clear()
