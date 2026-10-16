@@ -58,15 +58,16 @@ Chapterd-main/
 ├── README.md                          project documentation
 ├── .gitignore                         files Git should ignore (database, cache, venv)
 ├── screenshots/                       images used in this README
-│   ├── LogIn.png
-│   ├── Register.png
-│   ├── MainDashboard.png
-│   ├── AddBook.png
-│   ├── Search.png
-│   ├── Update.png
-│   ├── RemoveBook.png
-│   ├── BookLog.png
-│   └── SummaryStats.png
+│   ├── AddBook1.png
+│   ├── Dashboard.png
+│   ├── EditBook1.png
+│   ├── LogIn1.png
+│   ├── Ratings.png
+│   ├── Register1.png
+│   ├── RemoveBook1.png
+│   ├── SearchBook1.png
+│   ├── Status.png
+│   └── Summary1.png
 └── chapterd_qt/                       the application
     ├── __init__.py
     ├── main.py                        app entry point and main window (ChapterdWindow)
